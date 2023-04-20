@@ -109,6 +109,7 @@ class CreateSimpleProduct implements DataPatchInterface
         try {
             $this->appState->emulateAreaCode('adminhtml', [$this, 'execute']);
         } catch (Exception $e) {
+            $this->logger->error('An error occurred: ' . $e->getMessage());
         }
     }
 
